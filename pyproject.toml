@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ximenas_tooling"
+version = "0.1.0"
+description = "Colab tooling for marketing data analysis."
+requires-python = ">=3.10"
+# Loose pins so pip reuses the libraries preinstalled in Google Colab.
+dependencies = [
+    "pandas>=2",
+    "openpyxl>=3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
