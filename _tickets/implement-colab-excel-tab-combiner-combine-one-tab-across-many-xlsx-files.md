@@ -1,4 +1,5 @@
 ---
+session_ids: [{"a": "claude", "type": "execution", "id": "00863265-1dab-4ce2-ac14-1229c21431dd"}]
 working_dir: nickolay-kondratyev_ximenas-tooling
 id: nid_goesnf8l5ia4fpkv4udjqp32j_e
 title: "Implement Colab Excel tab combiner (combine one tab across many xlsx files)"
