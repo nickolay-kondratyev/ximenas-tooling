@@ -6,11 +6,12 @@
 ## Part 1: Running the scripts
 You don't install anything. The notebook installs the script by itself each time it runs.
 
-The steps below use the **combine_excel_tabs** notebook as the example: it takes one tab (e.g. `Sales`) from every Excel file in a Drive folder and stacks them into one Excel file in that same folder. Other notebooks work the same way; only the form fields differ.
+The steps below use the [**combine_excel_tabs** notebook](https://colab.research.google.com/github/nickolay-kondratyev/ximenas-tooling/blob/main/notebooks/combine_excel_tabs.ipynb) as the example: it takes one tab (e.g. `Sales`) from every Excel file in a Drive folder and stacks them into one Excel file in that same folder. Other notebooks work the same way; only the form fields differ.
 
 ### One-time setup
 1. **Sign in to Google in your browser with the account that holds your files** (your Google Drive account).
-2. **Bookmark each notebook link** the script author sent you (e.g. the combine_excel_tabs link). Always open the notebook from the bookmark. A copy saved to Drive won't get updates.
+2. **Bookmark each notebook link** the script author sent you. Always open the notebook from the bookmark. A copy saved to Drive won't get updates.
+   - combine_excel_tabs: <https://colab.research.google.com/github/nickolay-kondratyev/ximenas-tooling/blob/main/notebooks/combine_excel_tabs.ipynb>
 3. **Put your input files in a folder in "My Drive"**, e.g. `My Drive/reports` holding `january.xlsx`, `february.xlsx`, `march.xlsx`. Upload them at drive.google.com (**New → Folder upload**).
    - Folder shared with you by someone else? It isn't in "My Drive" by default. In Drive, right-click it → **Organize → Add shortcut** → pick **My Drive**.
 4. **Learn how folder paths look.** The form asks for paths like `/content/drive/MyDrive/reports`. `/content/drive/MyDrive/` means your "My Drive", followed by the folder name exactly as shown in Drive.
