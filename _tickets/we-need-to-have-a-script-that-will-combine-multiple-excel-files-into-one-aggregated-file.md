@@ -1,12 +1,13 @@
 ---
+closed_iso: 2026-09-18T04:38:48Z
 id: nid_6flt013tgdt5999nrwpyt76hr_e
 title: We need to have a script that will combine multiple excel files into one aggregated
   file
-status: in_progress
+status: closed
 deps: []
 links: []
 created_iso: '2026-09-18T04:19:47Z'
-status_updated_iso: '2026-09-18T04:35:18Z'
+status_updated_iso: 2026-09-18T04:38:48Z
 type: task
 priority: 3
 assignee: nickolaykondratyev
@@ -67,3 +68,9 @@ Input:
 OUTPUT:
 - single excel file with all the rows from across the tabs.
 - one extra column is added which contains the name of the source file that data came from.
+
+## Notes
+
+**2026-09-18T04:38:47Z**
+
+Planning done. HUMAN confirmed decisions and added a requirement: normalized column mismatch across ANY file fails the entire run loudly unless allow_column_mismatch=True (then union of columns, blanks, warning). Implementation: nid_goesnf8l5ia4fpkv4udjqp32j_e
