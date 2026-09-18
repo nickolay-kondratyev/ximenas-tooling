@@ -18,7 +18,7 @@ tags: []
 Implement a Google Colab tool for Ximena, a marketing data analyst. It combines ONE named tab from many Excel files into a single aggregated Excel file and adds a `Source File` column.
 
 Planning ticket (closed): `_tickets/we-need-to-have-a-script-that-will-combine-multiple-excel-files-into-one-aggregated-file.md`.
-Delivery conventions (READ FIRST): `docs/collab-setup/by-script-author.md` and `docs/collab-setup/by-consumer-in-collab.md`.
+Delivery conventions (READ FIRST): `CLAUDE.md` ("Colab delivery conventions"). Consumer experience: `docs/collab-setup/how-to-use-in-google-colab.md` (Part 1).
 
 The repo is PUBLIC. Never commit data files or client names. `.gitignore` already blocks `*.xlsx`, `*.xls`, `*.csv`, so test fixtures MUST be generated at test time in pytest `tmp_path`.
 
@@ -86,7 +86,7 @@ Collect every problem across all files, then raise a single `CombineValidationEr
 - Constants for `Source File`, `.xlsx`, the `~$` prefix, and the 31-char limit.
 
 ## Notebook `notebooks/combine_excel_tabs.ipynb`
-Keep it thin, per `docs/collab-setup/by-script-author.md`:
+Keep it thin, per `CLAUDE.md` ("Colab delivery conventions"):
 1. Markdown cell: one-paragraph description plus "Runtime → Run all".
 2. Setup cell: `%pip install -q git+https://github.com/nickolay-kondratyev/ximenas-tooling.git`
 3. Drive mount: `from google.colab import drive; drive.mount('/content/drive')`
@@ -113,7 +113,7 @@ Cover at least:
 - `pip install .` works in a clean venv; `pytest` passes (all tests listed above).
 - Default run with mismatched normalized columns fails loudly, writes nothing, and the message names `allow_column_mismatch`.
 - `allow_column_mismatch=True` produces the union of columns with blanks and prints a warning.
-- `notebooks/combine_excel_tabs.ipynb` follows the thin launcher shape from `docs/collab-setup/by-script-author.md`.
+- `notebooks/combine_excel_tabs.ipynb` follows the thin launcher shape from `CLAUDE.md` ("Colab delivery conventions").
 - No `.xlsx`/data files committed. `CLAUDE.md` updated succinctly. `change_log` entry added.
 
 
