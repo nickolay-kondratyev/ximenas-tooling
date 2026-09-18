@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: ximenas_tooling
+Version: 0.1.0
+Summary: Colab tooling for marketing data analysis.
+Requires-Python: >=3.10
+Requires-Dist: pandas>=2
+Requires-Dist: openpyxl>=3
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
