@@ -1,5 +1,0 @@
-pandas>=2
-openpyxl>=3
-
-[dev]
-pytest

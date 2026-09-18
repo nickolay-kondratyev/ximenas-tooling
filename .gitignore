@@ -5,3 +5,8 @@
 *.xlsx
 *.xls
 *.csv
+
+# Python build/cache artifacts
+*.egg-info/
+__pycache__/
+build/
