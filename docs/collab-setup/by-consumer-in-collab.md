@@ -3,7 +3,7 @@
 You don't install anything. The notebook installs the script by itself each time it runs.
 
 ## One-time setup
-1. **Use Google Chrome, signed in to the Google account that holds your files** (your Google Drive account).
+1. **Sign in to Google in your browser with the account that holds your files** (your Google Drive account).
 2. **Bookmark each notebook link** the script author sent you. Always open the notebook from the bookmark. A copy saved to Drive won't get updates.
 3. **Put your input files in a folder in "My Drive"**, e.g. `My Drive/reports`. Upload them at drive.google.com (**New → Folder upload**).
    - Folder shared with you by someone else? It isn't in "My Drive" by default. In Drive, right-click it → **Organize → Add shortcut** → pick **My Drive**.
