@@ -1,17 +1,18 @@
 ---
 id: nid_6flt013tgdt5999nrwpyt76hr_e
-title: "We need to have a script that will combine multiple excel files into one aggregated file"
-status: open
+title: We need to have a script that will combine multiple excel files into one aggregated
+  file
+status: in_progress
 deps: []
 links: []
-created_iso: 2026-09-18T04:19:47Z
-status_updated_iso: 2026-09-18T04:19:47Z
+created_iso: '2026-09-18T04:19:47Z'
+status_updated_iso: '2026-09-18T04:35:18Z'
 type: task
 priority: 3
 assignee: nickolaykondratyev
 tags: []
+pwd: /home/nickolaykondratyev/git_repos/nickolay-kondratyev_ximenas-tooling
 ---
-
 --------------------------------------------------------------------------------
 TASK: **PLAN**. Reach a shared understanding of this ticket before writing any plan.
 
@@ -66,4 +67,3 @@ Input:
 OUTPUT:
 - single excel file with all the rows from across the tabs.
 - one extra column is added which contains the name of the source file that data came from.
-
