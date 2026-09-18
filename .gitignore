@@ -1,2 +1,7 @@
 .out/
 .tmp/
+
+# Public repo: never commit data files (may contain client data).
+*.xlsx
+*.xls
+*.csv
