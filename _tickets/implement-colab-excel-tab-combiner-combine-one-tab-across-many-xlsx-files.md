@@ -1,11 +1,12 @@
 ---
+working_dir: nickolay-kondratyev_ximenas-tooling
 id: nid_goesnf8l5ia4fpkv4udjqp32j_e
 title: "Implement Colab Excel tab combiner (combine one tab across many xlsx files)"
-status: open
+status: in_progress
 deps: []
 links: []
 created_iso: 2026-09-18T04:38:44Z
-status_updated_iso: 2026-09-18T04:38:44Z
+status_updated_iso: 2026-09-18T04:40:49Z
 type: feature
 priority: 2
 assignee: nickolaykondratyev
