@@ -1,8 +1,12 @@
-# Colab Setup — Running the Scripts
+# How to Use in Google Colab
 
+- **Part 1** is for the person running the scripts.
+- **Part 2** is for the script author who publishes them.
+
+## Part 1: Running the scripts
 You don't install anything. The notebook installs the script by itself each time it runs.
 
-## One-time setup
+### One-time setup
 1. **Sign in to Google in your browser with the account that holds your files** (your Google Drive account).
 2. **Bookmark each notebook link** the script author sent you. Always open the notebook from the bookmark. A copy saved to Drive won't get updates.
 3. **Put your input files in a folder in "My Drive"**, e.g. `My Drive/reports`. Upload them at drive.google.com (**New → Folder upload**).
@@ -10,7 +14,7 @@ You don't install anything. The notebook installs the script by itself each time
 4. **Learn how folder paths look.** The form asks for paths like `/content/drive/MyDrive/reports`. `/content/drive/MyDrive/` means your "My Drive", followed by the folder name exactly as shown in Drive.
    - To copy the exact path: after the notebook has run once, click the **folder icon** in Colab's left sidebar → `drive` → `MyDrive` → right-click your folder → **Copy path**.
 
-## Every run
+### Every run
 1. **Open the notebook bookmark.** Sign in to Google if asked.
 2. **Read the text at the top.** It says what the script does and where it saves results.
 3. **Fill in the form fields** (e.g. the input folder, the tab name).
@@ -23,7 +27,23 @@ You don't install anything. The notebook installs the script by itself each time
 
 To run again with different inputs, change the form fields and run all again.
 
-## If something goes wrong
+### If something goes wrong
 1. Scroll to the error under the cell that failed and read it. Script errors explain what's wrong and how to fix it (e.g. a setting to change in the form).
 2. `No such file or directory` for a folder? Check the path against setup step 4.
 3. Still stuck? Send the script author a screenshot of the error.
+
+## Part 2: Script author (publishing)
+Manual steps to make scripts reachable from Google Colab. Coding conventions for the scripts themselves live in [CLAUDE.md](../../CLAUDE.md).
+
+### 1. Review before publishing
+The repo is **public**. Check that the commits contain no client data, client names or secrets.
+
+### 2. Publish
+```bash
+./publish.sh
+```
+It runs the tests, pushes `main` to GitHub, checks that the package installs from GitHub, and prints each notebook's Colab link.
+The consumer gets the changes on their next run. Existing links keep working, so you don't need to re-share them.
+
+### 3. New notebook only: share its link
+Send the consumer the Colab link that `publish.sh` printed, together with this doc (Part 1 is for them).

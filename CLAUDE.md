@@ -17,4 +17,4 @@ Scripts that we create should work within Google Colab.
   3. Drive mount, if it touches files: `from google.colab import drive; drive.mount('/content/drive')`
   4. `# @param` form fields.
   5. One `run(...)` call.
-- Publishing = `./publish.sh`. The human runs it, because it pushes `main`; agents do not. Manual steps: `docs/collab-setup/`.
+- Publishing = `./publish.sh`. The human runs it, because it pushes `main`; agents do not. Manual steps: `docs/collab-setup/how-to-use-in-google-colab.md`.

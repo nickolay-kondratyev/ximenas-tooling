@@ -16,7 +16,7 @@ tags: []
 Implement a Google Colab tool for Ximena, a marketing data analyst. It combines ONE named tab from many Excel files into a single aggregated Excel file and adds a `Source File` column.
 
 Planning ticket (closed): `_tickets/we-need-to-have-a-script-that-will-combine-multiple-excel-files-into-one-aggregated-file.md`.
-Delivery conventions (READ FIRST): `CLAUDE.md` ("Colab delivery conventions"). Consumer experience: `docs/collab-setup/by-consumer-in-collab.md`.
+Delivery conventions (READ FIRST): `CLAUDE.md` ("Colab delivery conventions"). Consumer experience: `docs/collab-setup/how-to-use-in-google-colab.md` (Part 1).
 
 The repo is PUBLIC. Never commit data files or client names. `.gitignore` already blocks `*.xlsx`, `*.xls`, `*.csv`, so test fixtures MUST be generated at test time in pytest `tmp_path`.
 
