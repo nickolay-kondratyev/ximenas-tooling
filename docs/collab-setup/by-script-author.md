@@ -1,32 +1,16 @@
-# Colab Setup — Script Author (publishing)
+# Colab Setup — Script Author (manual steps)
 
-What you do so the consumer can run scripts from a link. What they do is in [by-consumer-in-collab.md](by-consumer-in-collab.md).
+Manual steps to make scripts reachable from Google Colab. Coding conventions for the scripts themselves live in [CLAUDE.md](../../CLAUDE.md). What the consumer does is in [by-consumer-in-collab.md](by-consumer-in-collab.md).
 
-The repo is **public**: no tokens or secrets are needed.
+## 1. Review before publishing
+The repo is **public**. Check that the commits contain no client data, client names or secrets.
 
-## 1. Never commit sensitive content
-Anyone can read this repo. Keep out:
-- Data files (client names, spend figures). `.gitignore` already blocks `*.xlsx`, `*.xls`, `*.csv`.
-- Client-specific names or IDs in code. Take them as notebook form inputs instead.
-- Secrets of any kind.
-
-## 2. Put logic in the pip-installable package
-Logic lives in `src/ximenas_tooling/` with a `pyproject.toml` at the repo root.
-Keep dependency pins loose (e.g. `pandas>=2`) so pip reuses Colab's preinstalled libraries.
-
-## 3. Write a thin launcher notebook in `notebooks/`
-Cells, in order:
-1. Markdown: what the script does, and where it saves results.
-2. Setup: `%pip install -q git+https://github.com/nickolay-kondratyev/ximenas-tooling.git` (installs the latest `main` in every new Colab session).
-3. Drive mount (if it reads/writes files): `from google.colab import drive; drive.mount('/content/drive')`
-4. Form: parameters as `# @param` fields.
-5. Run: one `run(...)` call.
-
-## 4. Publish = `git push` to `main`
-There is no separate publish step. The notebook and the logic update together, and consumers get the change on their next run.
-
-## 5. Share the "Open in Colab" link (once per notebook)
+## 2. Publish
+```bash
+./publish.sh
 ```
-https://colab.research.google.com/github/nickolay-kondratyev/ximenas-tooling/blob/main/notebooks/<notebook>.ipynb
-```
-Send it together with [by-consumer-in-collab.md](by-consumer-in-collab.md). The link always opens the latest `main`, so you don't need to re-share after pushing.
+It runs the tests, pushes `main` to GitHub, checks that the package installs from GitHub, and prints each notebook's Colab link.
+The consumer gets the changes on their next run. Existing links keep working, so you don't need to re-share them.
+
+## 3. New notebook only: share its link
+Send the consumer the Colab link that `publish.sh` printed, together with [by-consumer-in-collab.md](by-consumer-in-collab.md).
