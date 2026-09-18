@@ -147,3 +147,9 @@ Built as specified. 46 pytest tests pass on pandas 3.0 (clean `pip install .`) a
 ### Not done / follow-ups
 - There is no automated check that the notebook's `run(...)` call still matches the function signature. The notebook is small, so this was left as a manual review item.
 - The notebook has not been run in real Colab (no Colab access here). To test it, open the Open-in-Colab link after merging to `main`.
+
+## Notes
+
+**2026-09-18T04:48:24Z**
+
+__READY_AS_IS__: Traced all modules vs spec, no bugs found; both fast and full (clean pip install, pandas 3.0.6) suites pass 46/46.
