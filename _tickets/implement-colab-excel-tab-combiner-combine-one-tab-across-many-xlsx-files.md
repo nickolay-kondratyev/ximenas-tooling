@@ -58,7 +58,8 @@ Collect every problem across all files, then raise a single `CombineValidationEr
 - Column mismatch (below) when `allow_column_mismatch` is False.
 
 ### Column matching (HUMAN requirement: LOUD failure by default)
-- The normalized column SET must match exactly across ALL files; column ORDER may differ.
+- SCOPE: only the extracted tab (`tab_name`) is compared. Other tabs in each workbook are never read or validated; their columns are irrelevant.
+- The normalized column SET of the extracted tab must match exactly across ALL files; column ORDER may differ.
 - By default (`allow_column_mismatch=False`), any mismatch FAILS THE ENTIRE RUN LOUDLY. The error must:
   - start with a clear banner, e.g. `COLUMN MISMATCH — nothing was written.`
   - list, per file, `missing: [...]` and `unexpected: [...]` columns relative to the first file (reference = first file in sorted order; name it in the message)
@@ -95,6 +96,7 @@ Cover at least:
 - normalizer: trim, collapse whitespace, lowercase, non-str input
 - happy path: 2–3 files, matching columns in different order/case/spacing → all rows present, `Source File` correct, headers from the first file
 - tab matched case/space-insensitively; missing tab → error lists file and its available tabs
+- other tabs with differing columns across files do NOT cause a mismatch (only the extracted tab is compared)
 - column mismatch default → raises; message contains `allow_column_mismatch`, `missing`, `unexpected`, file names; NO output file written
 - column mismatch + `allow_column_mismatch=True` → union of columns, blanks where missing, row count correct
 - multiple problems across files reported in ONE error
