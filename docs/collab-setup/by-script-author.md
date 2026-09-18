@@ -13,7 +13,9 @@ Anyone can read this repo. Keep out:
 ## 2. Make the repo pip-installable
 Logic lives in a Python package (`src/ximenas_tooling/`) with a `pyproject.toml` at the repo root.
 Keep dependency pins loose (e.g. `pandas>=2`) so pip reuses Colab's preinstalled libraries.
-Check that it installs:
+Publishing is just `git push` to `main`. There is no separate publish step.
+
+After pushing, check that it installs. This command only downloads from GitHub, so it tests what is pushed, not your local changes:
 ```bash
 pip install git+https://github.com/nickolay-kondratyev/ximenas-tooling.git
 ```
