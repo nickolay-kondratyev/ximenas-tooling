@@ -49,6 +49,29 @@ class TestRunGivenTwoMatchingFiles:
         assert len(read_output(folder)) == 3
 
 
+class TestRunGivenColumnsInDifferentOrderCaseAndSpacing:
+    @pytest.fixture
+    def folder(self, tmp_path):
+        WorkbookFixture.write(tmp_path / "a.xlsx", {TAB: [["Campaign Name", "Clicks", "Spend"], ["x", 1, 10.5]]})
+        WorkbookFixture.write(tmp_path / "b.xlsx", {TAB: [[" spend ", "CAMPAIGN   name", "clicks"], [20.5, "y", 2]]})
+        return tmp_path
+
+    def test_THEN_headers_come_from_first_file(self, folder):
+        run(str(folder), TAB)
+        assert list(read_output(folder).columns) == ["Campaign Name", "Clicks", "Spend", "Source File"]
+
+    def test_THEN_every_value_lands_under_its_matching_header(self, folder):
+        run(str(folder), TAB)
+        assert read_output(folder).to_dict("records") == [
+            {"Campaign Name": "x", "Clicks": 1, "Spend": 10.5, "Source File": "a.xlsx"},
+            {"Campaign Name": "y", "Clicks": 2, "Spend": 20.5, "Source File": "b.xlsx"},
+        ]
+
+    def test_THEN_no_column_mismatch_warning_is_printed(self, folder, capsys):
+        run(str(folder), TAB)
+        assert "COLUMN MISMATCH" not in capsys.readouterr().out
+
+
 class TestRunGivenOtherTabsDiffer:
     def test_THEN_only_the_extracted_tab_is_compared(self, tmp_path):
         WorkbookFixture.write(tmp_path / "a.xlsx", {TAB: [["X"], [1]], "Notes": [["Foo"], [1]]})
